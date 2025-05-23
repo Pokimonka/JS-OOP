@@ -15,15 +15,14 @@ test('throw exception when name > 10', () => {
 
 test('Character level Up with health == 0', () => {
     const ch = new Character('Test');
-    // const correct = {
-    //     attack: 0,
-    //     defence: 0,
-    //     health: 100, 
-    //     level: 1,
-    //     name: 'Test',
-    //     type: 'Character'
-    // };
-    // expect(ch).toEqual(correct);
     ch.health = 0;
     expect(ch.levelUp).toThrow();
+})
+
+test('Character damage with health < 0', () => {
+    const ch = new Character('Test');
+    ch.health = -8;
+    ch.damage(7);
+
+    expect(ch.health).toEqual(-8);
 })
