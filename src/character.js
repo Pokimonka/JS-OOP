@@ -21,7 +21,7 @@ export default class Character {
 
     levelUp() {
         if (!this.health) {
-            throw new Error('We lost him')
+            throw new Error('We lost him');
         }
         this.level += 1;
         this.attack += this.attack * 0.2;
